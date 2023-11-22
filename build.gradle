@@ -15,5 +15,6 @@ dependencies {
   implementation 'com.typesafe.akka:akka-stream-kafka_2.13:+'
   implementation 'com.typesafe.akka:akka-actor-typed_2.13:+'
   implementation 'com.typesafe.akka:akka-stream_2.13:+'
+  implementation 'org.slf4j:slf4j-simple:1.7.30'
   // Kafka and other necessary dependencies
 }

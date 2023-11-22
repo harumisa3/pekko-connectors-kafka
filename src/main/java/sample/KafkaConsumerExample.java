@@ -12,13 +12,13 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 
 public class KafkaConsumerExample {
   public static void main(String[] args) {
-    final ActorSystem system = ActorSystem.create("pekko-consumer");
+    final ActorSystem system = ActorSystem.create("pekkos-system");
     final ActorMaterializer materializer = ActorMaterializer.create(system);
 
     final ConsumerSettings<String, String> consumerSettings = ConsumerSettings
         .create(system, new StringDeserializer(), new StringDeserializer())
         .withBootstrapServers("localhost:9093")
-        .withGroupId("group-id")
+        .withGroupId("pekko-consumer")
         .withProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
     Consumer.plainSource(consumerSettings, Subscriptions.topics("pekko-topic"))
